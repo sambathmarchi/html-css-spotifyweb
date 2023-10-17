@@ -1,0 +1,631 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+#wrapper {
+
+    display: flex;
+    height: calc(100vh - 100px);
+
+}
+
+
+#wrapper aside {
+
+    width: 200px;
+    height: 100%;
+    background-color: black;
+}
+
+
+#wrapper main {
+
+    width: calc(100% - 200px);
+    height: 100%;
+    background-color: rgb(20, 25, 34);
+}
+
+#banner-upg {
+
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.376);
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 200px;
+    z-index: 5;
+}
+.btn-upg {
+    text-align: end;
+    line-height: 100px;
+    
+}
+.btn-upg a {
+
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    border: solid 1px white;
+    border-radius: 20px;
+    padding: 13px 40px;
+    margin-right: 25px;
+}
+.btn-upg a:hover{
+    
+    font-size: 1rem;
+}
+
+.main-content-container {
+
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+#wrapper main nav {
+
+    margin-top: 100px;
+}
+main nav ul {
+
+    padding: 25px 0;
+    text-align: center;
+}
+main nav li {
+
+    display: inline-block;
+    padding: 0 10px;
+}
+main nav a {
+
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: grey;
+}
+main nav a:hover {
+
+    color: rgb(182, 182, 182);
+}
+nav .selected {
+    border-bottom: 3px solid rgb(145, 213, 39);
+    width: 40%;
+    margin: 2px auto;
+}
+
+.row > h2 {
+    font-weight: 700;
+    color: white;
+    margin: 0 1%;
+}
+.row > p {
+    margin: 1% 1%;
+}
+
+
+.album-container {
+
+    margin: 2% 0;
+}
+.album {
+
+    float: left;
+    text-align: center;
+    width: calc(100% / 6 - 2%);
+    margin: 0.5% 0.5%;
+}
+.album h3 {
+    margin: 3% 0;
+    font-size: 1rem;
+}
+.sub-title, .row > p {
+    color: grey;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.cover {
+
+    position: relative;
+    margin: 0 auto;
+    max-width: 200px;
+}
+.cover img {
+
+    max-width: 100%;
+}
+#artists .cover img {
+
+    border-radius: 50%;
+}
+.overlay {
+
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.overlay i {
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+}
+.album:hover .overlay{
+
+    display: block;
+}
+#artists .cover .overlay {
+
+    border-radius: 50%;
+}
+
+@media all and (max-width: 878px) and (min-width: 640px) {
+
+    .album {
+
+        float: none;
+        width: calc(100% / 4 - 2%);
+        margin: 2% 0.5%;
+    }
+
+    .album-container {
+
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .row {
+
+        margin-top: 10%;
+    }
+
+    main nav li {
+        padding: 5% 10px;
+    }
+
+
+}
+
+
+@media all and (max-width: 639px){
+
+    .album {
+
+        width: calc(100% / 2 - 2%);
+        margin: 2% 0.5%;
+    }
+
+
+    .row {
+
+        margin-top: 10%;
+    }
+
+
+    main nav li {
+        padding: 5% 10px;
+    }
+}
+
+.logo {
+    display: block;
+    max-width: 65%;
+    padding-left: 10%;
+    margin: 10% 0;
+}
+
+.spotify-logo {
+    display: none;
+}
+
+
+#aside-nav li {
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 5%;
+}
+#aside-nav li a {
+
+    display: flex;
+    align-items: center;
+
+    color: grey;
+}
+#aside-nav li a:hover{
+
+    color: rgb(182, 182, 182);
+}
+.selected-y {
+
+    border-left: 3px solid rgb(145, 213, 39);
+}
+#aside-nav li i {
+
+    font-size: 1.3rem;
+}
+#aside-nav li svg {
+
+    fill: grey;
+    width: 25%;
+    padding-left: 10%;
+    padding-right: 3%;
+}
+#aside-nav li a:hover svg {
+
+    fill:rgb(182, 182, 182);
+}
+
+
+.playlist {
+
+    color: white;
+    font-size: 0.6rem;
+    margin: 10% 10%;
+    height: calc(100% - 300px);
+}
+.playlist .playlist-new {
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin: 5% 0;
+}
+.playlist-new a {
+
+    display: flex;
+    align-items: center;
+
+    color: grey;
+}
+.playlist-new a:hover {
+
+    color: rgb(182, 182, 182);
+}
+.playlist .playlist-new i {
+
+    font-size: 2.5rem ;
+    margin-right: 5%;
+}
+
+.playlist-list {
+
+    height:80%;
+}
+
+.playlist-list ul {
+
+    height: 100%;
+    min-height: 190px;
+    overflow: auto;
+}
+.playlist-list li {
+    
+    margin: 10% 0;
+}
+.playlist-list a {
+
+    color: grey;
+    font-size: .8rem;
+    font-weight: 700;
+}
+.playlist-list a:hover {
+
+    color:rgb(182, 182, 182) ;
+}
+
+aside {
+
+    overflow: hidden;
+
+}
+
+.install, .user {
+
+    display: block;
+}
+.user-container {
+
+    position: sticky;
+    top: 100%;
+
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 5%;
+    background-color: black;
+    z-index: 4;
+
+    color:white;
+
+}
+
+.user .fa-user {
+
+    background-color: grey;
+    padding: 2% 3%;
+    border-radius: 50%;
+    margin-top: 10%;
+}
+
+.install {
+
+    border-bottom: 1px grey solid;
+    padding: 10% 0;
+    font-size: 0.8rem;
+    color:grey;
+}
+.install:hover {
+
+    color: rgb(182, 182, 182);
+}
+
+.install i {
+
+    margin-right: 5%;
+}
+
+
+@media all and (max-width: 522px) {
+
+    #wrapper aside {
+
+        width: 50px;
+    }
+
+    #wrapper main {
+
+        width: calc(100% - 50px);
+    }
+
+    #banner-upg {
+
+        left: 50px;
+    }
+
+
+    .playlist {
+
+        display: none;
+    }
+
+    aside span {
+
+        display: none;
+    }
+
+    .spotify-logo--text {
+
+        display: none;
+    }
+
+    .spotify-logo {
+
+        display: block;
+        width: 100%;
+        margin: 20%;
+        margin-bottom: 50%;
+    }
+
+    #aside-nav li svg {
+
+        width: 65%;
+        margin: 10% auto;
+    }
+
+    .install, .user {
+
+        text-align: center;
+        margin: 20% 0;
+    }
+
+
+}
+
+
+
+#player {
+
+    height: 100px;
+    background-color: rgb(40,40,40);
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+
+    width: 20%;
+    display: flex;
+}
+
+.now-playing {
+
+    display: flex;
+    align-items: center;
+    
+    font-size: 0.7rem;
+    color: white;
+
+    width: 80%;
+}
+
+.cover-now-play {
+
+    max-width: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+} 
+
+.cover-now-play img {
+
+    max-width: 100%;
+}
+
+.name-now-play a{
+
+    font-size: 0.6rem;
+    color: grey;
+}
+
+.name-now-play a:hover {
+
+    color: rgb(182, 182, 182);
+    text-decoration: underline;
+}
+
+.like-archive {
+
+    align-self: center;
+    margin-left: 10%;
+    width: 20%;
+}
+
+.like-archive > a {
+
+    color: grey;
+    display: block;
+}
+
+.like-archive > a:hover {
+
+    color: white;
+}
+
+
+.center {
+
+    width: 60%;
+}
+
+.center .buttons {
+
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+.center .buttons a {
+
+    margin: 0 1.5%;
+    vertical-align: middle;
+}
+.center .buttons .fa-play-circle {
+
+    font-size: 2rem;
+}
+.center .buttons .fa-play-circle:hover {
+
+    transform: scale(1.1);
+}
+
+.bar {
+
+    display: inline-block;
+    height: 5px;
+    width: 50%;
+    border-radius: 5px;
+    background-color: grey;
+
+    position: relative;
+    margin: 0 2%;
+}
+
+.bar-container {
+
+    text-align: center;
+}
+
+.bar-container span {
+
+    color: white;
+    font-size: 0.7rem;
+}
+
+.bar-status {
+
+    position: absolute;
+    bottom:0;
+    left: 0;
+    top: 0;
+    right: 80%;
+
+    background-color: white;
+    border-radius: 10px;
+}
+
+.bar-status .bar-status-point {
+
+    display: none;
+
+    cursor: pointer;
+
+    position: absolute;
+    right: 0px;
+    bottom: -50%;
+
+    border-radius: 50%;
+    height: 11px;
+    width: 11px;
+    background-color: white;
+
+    box-shadow:3px 0px 8px black;
+}
+
+.bar:hover .bar-status{
+
+    background-color: rgb(145, 213, 39);
+}
+
+.bar:hover .bar-status-point{
+
+    display: block;
+}
+
+.right {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 20%;
+}
+
+.right .buttons {
+
+    width: 40%;
+}
+
+.right .buttons a{
+
+    margin:0 5% ;
+}
